@@ -13,6 +13,14 @@ class Mahasiswa{
 		return $data;
 	}
 
+	public function save(){
+		$nim     =$this->getNim();
+		$nama    =$this->getNama();
+		$jurusan =$this->getJurusan();
+
+		$query=mysql_query("INSERT into mahasiswa (nim,nama,jurusan) values ('$nim','$nama','$jurusan')");
+	}
+
 
 
 	public function setNim($nim){
@@ -34,7 +42,7 @@ class Mahasiswa{
 	}
 
 	public function getNama(){
-		return $this->Nama;
+		return $this->nama;
 	}
 
 	public function getJurusan(){
